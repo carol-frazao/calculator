@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rationale&family=ZCOOL+QingKe+HuangYou&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-roboto: 'Roboto', sans-serif;
+    --font-rationale: 'Rationale', sans-serif;
+    --color-green: #6aeb6c;
+    --color-black: #444;
+    --color-red: #ed645f;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    width: 100%;
+    max-width: 400px;
+    /* height: 100%;
+    max-height: 500px; */
+    padding: 1rem;
+}
+
+.container {
+    background-color: #fcf5f5;
+    position: relative;
+    border: solid 2px #444;
+    border-radius: 15px;
+    box-shadow: -1px 1px 5px #444;
+    height: 500px;
+}
+
+.title {
+    display: flex;
+    gap: 10px;
+    cursor: default;
+    position: absolute;
+    left: 23%;
+    top: 3%;
+    font-size: clamp(8px, 5vw, 14px);
+}
+
+.title strong {
+    font-weight: 600;
+    font-family: var(--font-rationale);
+}
+
+.title a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.display {
+    background-color: #444;
+    width: 90%;
+    height: 20%;
+    position: absolute;
+    left: 5%;
+    top: 9%;
+    border-radius: 12px;
+}
+
+.display_numbers {
+    background-color: #83fca2;
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    border-radius: 2px;
+    left: 5%;
+    top: 10%;
+    text-align: end;
+    overflow: hidden;
+}
+
+.display_numbers p {
+    font-family: var(--font-rationale);
+    padding-right: 10px;
+    padding-top: 5px;
+    font-size: clamp(20px, 17vw, 65px);
+}
+
+.keywords {
+    font-family: var(--font-roboto);
+    position: absolute;
+    top: 35%;
+    left: 6%;
+    width: 88%;
+    font-weight: 600;
+    overflow: hidden    ;
+}
+
+.commands {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    list-style: none;
+    gap: 12px;
+}
+
+.command_btn {
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+
+}
+
+.powerOn {
+    background: var(--color-red );
+}
+
+.powerOff, .clearDisplay, .backspace {
+    background-color: var(--color-green);
+}
