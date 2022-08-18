@@ -19,76 +19,47 @@
           <a href="https://github.com/carol-frazao/pokedex" target="_blank">
             <i class="fa-brands fa-github"></i>
           </a>
-
           <a href="https://www.linkedin.com/in/carol-frazao/" target="_blank">
             <i class="fa-brands fa-linkedin"></i>
           </a>
         </div>
 
-        <div class="display">
-          <div class="display_numbers">
+        <div class="display-container">
+          <div class="display-content">
             <p id="symbol"></p>
             <p id="exibir"></p>
           </div>
         </div>
 
-        <div class="keyboardKeys">
-          <ul class="keyboardColumns">
-            <li>
-              <ul class="column_1 column">
-                <li class="btn powerOff">Off</li>
-                <li class="btn memory" id="M_adicao">M+</li>
-                <li class="btn memory" id="M_subtracao">M-</li>
-                <li class="btn memory" id="MRC">MRC</li>
-                <li class="btn operatorExtra" id="btn_raizQuadrada">&#8730;</li>
-              </ul>
-            </li>
-
-            <li>
-              <ul class="column_2 column">
-                <li class="btn powerOn">On</li>
-                <li class="btn number_btn">7</li>
-                <li class="btn number_btn">4</li>
-                <li class="btn number_btn">1</li>
-                <li class="btn operatorExtra" id="btn_porcentagem">%</li>
-              </ul>
-            </li>
-
-            <li>
-              <ul class="column_3 column">
-                <li class="btn clearDisplay" id="btn_ce">CE</li>
-                <li class="btn number_btn">8</li>
-                <li class="btn number_btn">5</li>
-                <li class="btn number_btn">2</li>
-                <li class="btn number_btn">0</li>
-              </ul>
-            </li>
-
-            <li>
-              <ul class="column_4 column">
-                <li class="btn operator" id="btn_adicao">&#43;</li>
-                <li class="btn number_btn">9</li>
-                <li class="btn number_btn">6</li>
-                <li class="btn number_btn">3</li>
-                <li class="btn operatorExtra number_btn">.</li>
-              </ul>
-            </li>
-
-            <li>
-              <ul class="column_5 column">
-                <li class="btn operator" id="btn_subtracao">&#8722;</li>
-                <li class="btn operator" id="btn_multiplicacao">&#215;</li>
-                <li class="btn operator" id="btn_divisao">&#247;</li>
-                <li class="btn operator" id="btn_result">&#61;</li>
-              </ul>
-            </li>
-          </ul>
+        <div class="keyboard">
+          <button class="btn" id="powerOff">Off</button>
+          <button class="btn command" id="on-c">On/C</button>
+          <button class="btn command" id="backspace">&#8592;</button>
+          <button class="btn operator" id="adicao">&#43;</button>
+          <button class="btn operator" id="subtracao">&#8722;</button>
+          <button class="btn memory" id="m-add">M+</button>
+          <button class="btn number">7</button>
+          <button class="btn number">8</button>
+          <button class="btn number">9</button>
+          <button class="btn operator" id="multiplicacao">&#215;</button>
+          <button class="btn memory" id="m-remove">M-</button>
+          <button class="btn number">4</button>
+          <button class="btn number">5</button>
+          <button class="btn number">6</button>
+          <button class="btn operator" id="divisao">&#247;</button>
+          <button class="btn memory" id="mrc">MRC</button>
+          <button class="btn number">1</button>
+          <button class="btn number">2</button>
+          <button class="btn number">3</button>
+          <button class="btn operator" id="result">&#61;</button>
+          <button class="btn extra">.</button>
+          <button class="btn extra" id="porcentage">%</button>
+          <button class="btn number">0</button>
+          <button class="btn extra" id="raizQuadrada">&#8730;</button>
         </div>
       </div>
     </main>
 
-    <script src="./assets/scripts/variables.js"></script>
-    <script src="./assets/scripts/eventos.js"></script>
-    <script src="./assets/scripts/operacao.js"></script>
+    <script src="./assets/scripts.js"></script>
   </body>
 </html>
