@@ -79,33 +79,25 @@ main {
     top: 9%;
     border-radius: 12px;
     transition: .2s all;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
 }
 
 .display-content {
     background-color: #83fca2;
-    position: absolute;
     width: 90%;
     height: 80%;
     border-radius: 2px;
-    left: 5%;
-    top: 10%;
     text-align: end;
 }
 
-#symbol {
-    font-size: 30px;
-    position: absolute;
-    left: 3%;
-    top: 20%;
-}
-
 #exibir {
-    overflow-y: hidden;
+    overflow: hidden;
     font-family: var(--font-rationale);
-    padding: 5px 10px 0;
-    font-size: 65px;
-    user-select: none;
-    /* display: none; */
+    margin: 5px 10px;
+    font-size: 60px;
+    display: none;
 }
 
 #exibir::after {
@@ -164,6 +156,11 @@ main {
 }
 
 .operator {
+    background-color: var(--color-blue);
+    color: #fff;
+}
+
+#result {
     background-color: var(--color-blue);
     color: #fff;
 }
