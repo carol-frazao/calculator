@@ -53,6 +53,7 @@ main {
     left: 24%;
     top: 3%;
     font-size: clamp(8px, 5vw, 14px);
+    user-select: none;
 }
 
 .title strong {
@@ -93,6 +94,30 @@ main {
     padding-right: 10px;
     padding-top: 5px;
     font-size: clamp(30px, 16vw, 65px);
+    user-select: none;
+    display: none;
+    transition: .1s;
+}
+
+#symbol {
+    font-size: 30px;
+    position: absolute;
+    left: 3%;
+    top: 20%;
+}
+
+#exibir::after {
+    content: '|';
+    animation: pisca 1s infinite;
+}
+
+@keyframes pisca {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 .keyboardKeys {
@@ -136,6 +161,8 @@ main {
     display: flex;
     align-items: center;
     box-shadow: 1px 1px 0 #666, 2px 1px 0 #555;
+    user-select: none;
+    cursor: pointer;
 }
 
 .column_5 {
