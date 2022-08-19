@@ -1,15 +1,12 @@
 window.onload = () => {
-  const powerOnBtn = document.getElementById("on-c");
-  const powerOffBtn = document.getElementById("powerOff");
-  const buttons = document.querySelectorAll(".number, .operator");
-  const backBtn = document.getElementById("backspace");
   const content = document.getElementById("exibir");
-  const result = document.getElementById("result");
   const clear = () => (content.innerHTML = "");
 
   // Desligar calculadora
   function powerOff() {
-    powerOffBtn.onclick = () => {
+    const powerOff = document.getElementById("powerOff");
+
+    powerOff.onclick = () => {
       content.style.display = "none";
       clear();
     };
@@ -18,7 +15,9 @@ window.onload = () => {
 
   //Ligar calculadora ou limpar o conteúdo
   function powerOn_clear() {
-    powerOnBtn.onclick = () => {
+    const powerOn = document.getElementById("on-c");
+
+    powerOn.onclick = () => {
       content.style.display = "block";
 
       if (content.innerHTML) {
@@ -30,6 +29,8 @@ window.onload = () => {
 
   //Exibir os números clicados
   function displayContent() {
+    const buttons = document.querySelectorAll(".number, .operator");
+
     buttons.forEach((btn) => {
       btn.onclick = () => (content.innerHTML += btn.innerHTML);
     });
@@ -38,22 +39,40 @@ window.onload = () => {
 
   // Apagar caractere
   function backspace() {
-    backBtn.onclick = () => {
+    const backspace = document.getElementById("backspace");
+
+    backspace.onclick = () => {
       let conteudo = content.innerHTML;
       content.innerHTML = conteudo.substring(conteudo.length - 1, 0);
     };
   }
   backspace();
 
-  //Calcular
-  function calcular() {
-    result.onclick = () => {
+  // Calcular conteúdo
+  function calc() {
+    const resultado = document.getElementById("result-btn");
+
+    resultado.onclick = () => {
       let conteudo = content.innerHTML;
-      parseInt(content.innerHTML);
+
       if (conteudo) {
         content.innerHTML = eval(conteudo);
       }
     };
   }
-  calcular();
+  calc();
+
+  // Calcular raiz quadrada
+  function squareRoot() {
+    const sqrtBtn = document.getElementById("raizQuadrada");
+
+    sqrtBtn.onclick = () => {
+      let conteudo = content.innerHTML;
+
+      if (conteudo) {
+        content.innerHTML = Math.sqrt(conteudo);
+      }
+    };
+  }
+  squareRoot();
 };

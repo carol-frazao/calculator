@@ -160,9 +160,10 @@ main {
     color: #fff;
 }
 
-#result {
+#result-btn {
     background-color: var(--color-blue);
     color: #fff;
+    grid-row: span 2;
 }
 
 .memory {
@@ -176,10 +177,6 @@ main {
 
 .extra {
     background-color: #ebeaea;
-}
-
-#result {
-    grid-row: span 2;
 }
 
 @media  (max-width: 350px) {
