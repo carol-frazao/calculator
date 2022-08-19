@@ -24,7 +24,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     min-width: 100vw;
-    background-image: url('./background.png');
+    background-image: url('./images/background.png');
     background-size: cover;
 }
 
