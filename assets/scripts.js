@@ -1,6 +1,8 @@
 window.onload = () => {
   const content = document.getElementById("exibir");
   const clear = () => (content.innerHTML = "");
+  const erro = () => (content.innerHTML = "Error");
+  const operadores = document.querySelectorAll("operator");
 
   // Desligar calculadora
   function powerOff() {
@@ -22,6 +24,8 @@ window.onload = () => {
 
       if (content.innerHTML) {
         clear();
+        content.style.fontSize = "inherit";
+        content.style.overflowWrap = "normal";
       }
     };
   }
@@ -54,8 +58,15 @@ window.onload = () => {
 
     resultado.onclick = () => {
       let conteudo = content.innerHTML;
-
-      if (conteudo) {
+      //retornar erro ao tentar porcentagem para floats incompletos
+      if (
+        conteudo.indexOf(".") + 1 == conteudo.indexOf("%") ||
+        conteudo.indexOf(".") - 1 == conteudo.indexOf("%")
+      ) {
+        erro();
+      }
+      // se as validações estiverem ok, calcular o conteúdo innerHTML
+      else {
         content.innerHTML = eval(conteudo);
       }
     };
@@ -75,4 +86,62 @@ window.onload = () => {
     };
   }
   squareRoot();
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  // Porcentagem
+  function percent() {
+    const percentBtn = document.getElementById("percent-btn");
+
+    //retornar porcentagem do valor informado
+    operadores.forEach((operador) => {
+      let conteudo = content.innerHTML;
+
+      if (
+        conteudo.includes(operador.innerHTML) &&
+        conteudo.includes("%") &&
+        conteudo.indexOf("%") == conteudo.length - 1
+      ) {
+        let valor = conteudo.substring(
+          conteudo.indexOf("%"),
+          conteudo.lastIndexOf(operador.innerHTML) + 1
+        );
+        let calcPercent = valor / 100;
+        console.log(valor);
+      }
+    });
+  }
+
+  //
+  //
+  //
+  //
+  //
+  //
+  // function validacoes() {
+  //   const conteudo = content.innerHTML;
+
+  //   if (conteudo.indexOf("%") !== conteudo.length - 1) {
+  //     erro();
+  //   }
+
+  //   operadores.forEach((operador) => {
+  //     //retornar porcentagem do valor informado
+  //     if (
+  //       conteudo.includes(operador.innerHTML) &&
+  //       conteudo.includes("%") &&
+  //       conteudo.indexOf("%") == conteudo.length - 1
+  //     ) {
+  //       let valor = conteudo.substring(
+  //         conteudo.indexOf("%"),
+  //         conteudo.lastIndexOf(operador.innerHTML) + 1
+  //       );
+  //       let calcPercent = valor / 100;
+  //     }
+  //   });
 };

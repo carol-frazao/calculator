@@ -90,13 +90,13 @@ main {
     height: 80%;
     border-radius: 2px;
     text-align: end;
+    font-size: 60px;
 }
 
 #exibir {
     overflow: hidden;
     font-family: var(--font-rationale);
     margin: 5px 10px;
-    font-size: 60px;
     display: none;
 }
 
@@ -175,8 +175,9 @@ main {
     color: #4b74db;
 }
 
-.extra {
+.extra, #percent-btn, #ponto {
     background-color: #ebeaea;
+    color: inherit;
 }
 
 @media  (max-width: 350px) {
@@ -189,7 +190,7 @@ main {
     .display {
         height: 18%;
     }
-    #exibir {
+    .display-content {
         font-size: 45px;
     }
     .keyboard {
